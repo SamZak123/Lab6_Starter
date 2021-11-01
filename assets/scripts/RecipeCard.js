@@ -110,9 +110,11 @@ class RecipeCard extends HTMLElement {
 
     //title & link for title (p)
     var title = document.createElement("p");
+    var link = document.createElement("a");
     title.classList.add("title");
-    title.innerText = searchForKey(data, "headline");
-    title.href = getUrl(data);
+    link.href = getUrl(data); 
+    link.innerText = searchForKey(data, "headline");
+    title.appendChild(link); 
     card.appendChild(title);
 
     //organization (2nd p)
